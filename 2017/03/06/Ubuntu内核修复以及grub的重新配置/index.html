@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="FluencyLiu">
 <meta property="og:description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。
 　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot">
-<meta property="og:updated_time" content="2017-03-17T07:55:02.178Z">
+<meta property="og:updated_time" content="2020-10-07T17:41:36.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu内核修复以及grub的重新配置">
 <meta name="twitter:description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。
@@ -357,12 +357,12 @@
 
       
         <p>　　第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。</p>
-<p>　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot分区的空间，不再使用kernel通常需要手动删除。清理kernel一直以来都是一项高危工作，稍有不慎就会导致系统奔溃。虽然没有什么问题是重装系统解决不了的，但是考虑到重装系统后需要重新配置系统环境，重装系统的工作量对于在之前系统上耕耘已久的用户显然不是一个小case。下面分享的kernel修复方法是之前折腾了大半天总结出来的，希望可以帮助到其他遇到类似问题的人。</p>
+<p>　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot分区的空间，不再使用的kernel通常需要手动删除。清理kernel一直以来都是一项高危工作，稍有不慎就会导致系统奔溃。虽然没有什么问题是重装系统解决不了的，但是考虑到重装系统后需要重新配置系统环境，重装系统的工作量对于在之前系统上耕耘已久的用户显然不是一个小case。下面分享的kernel修复方法是之前折腾了大半天总结出来的，希望可以帮助到其他遇到类似问题的人。</p>
 <p>　　首先要根据所要修复的内核版本在 <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/" target="_blank" rel="external">http://kernel.ubuntu.com/~kernel-ppa/mainline/</a> 找到对应的目录下载所需要的.deb文件。以v4.6-rc6-wily为例，修复64位Ubuntu系统需要下载下列文件：</p>
 <blockquote>
 <p>linux-headers-4.6.0-040600rc6_4.6.0-040600rc6.201605012031_all.deb<br>linux-headers-4.6.0-040600rc6-generic_4.6.0-040600rc6.201605012031_amd64.deb<br>linux-image-4.6.0-040600rc6-generic_4.6.0-040600rc6.201605012031_amd64.deb</p>
 </blockquote>
-<p>　　使用Live-CD启动，将下载好的.deb文件复制到一个指定目录（e.g. 电脑系统盘root分区下的tmp目录）后，打开Terminal，输入如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mkdir /uroot</div><div class="line">sudo su</div><div class="line">mount /dev/sda2 /uroot #挂在原系统的root目录,以</div><div class="line">mount /dev/sda3 /uroot/boot #挂在boot分区</div><div class="line">mount --bind /proc /uroot/proc #绑定进程文件</div><div class="line">mount --bind /dev /uroot/dev #绑定设备文件</div><div class="line">mount --bind /sys /uroot/sys  #绑定系统文件</div><div class="line">chroot /uroot</div><div class="line">cd /tmp</div><div class="line">dpkg -i *.deb</div></pre></td></tr></table></figure></p>
+<p>　　使用Live-CD启动，将下载好的.deb文件复制到一个指定目录（e.g. 电脑系统盘root分区下的tmp目录）后，打开Terminal，输入如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mkdir /uroot</div><div class="line">sudo su</div><div class="line">mount /dev/sda2 /uroot #挂载原系统的root目录,以</div><div class="line">mount /dev/sda3 /uroot/boot #挂载boot分区</div><div class="line">mount --bind /proc /uroot/proc #绑定进程文件</div><div class="line">mount --bind /dev /uroot/dev #绑定设备文件</div><div class="line">mount --bind /sys /uroot/sys  #绑定系统文件</div><div class="line">chroot /uroot</div><div class="line">cd /tmp</div><div class="line">dpkg -i *.deb</div></pre></td></tr></table></figure></p>
 <p>　　安装结束后重启系统即可。</p>
 <p>　　重装Ubuntu之后，grub启动界面会出现一个多余的选项。虽然这并不会影响系统的正常启动，但是对于饱受强迫症煎熬的人来说，它依旧是完全是无法接受的存在。Linux自带的efibootmgr为这个问题提供了方便的解决方案。</p>
 <p>　　首先使用Live-CD启动系统，在Terminal中输入如下命令，查看目前存在的grub选项。</p>
@@ -496,7 +496,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
