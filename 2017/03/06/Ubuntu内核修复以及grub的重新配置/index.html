@@ -1,630 +1,403 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
+<link rel="stylesheet" href="/css/main.css">
 
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fluencyliu.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Default" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。
-　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot">
+  <meta name="description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定&#x3D;。&#x3D;”这句内容的状态也快两年了。 　　使用Linux系统，&#x2F;boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，&#x2F;boot分区的空间就差不多交代了。为了释放&#x2F;boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu内核修复以及grub的重新配置">
-<meta property="og:url" content="http://fluencyliu.github.io/2017/03/06/Ubuntu内核修复以及grub的重新配置/index.html">
-<meta property="og:site_name" content="FluencyLiu">
-<meta property="og:description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。
-　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot">
-<meta property="og:updated_time" content="2020-10-07T17:41:36.817Z">
+<meta property="og:url" content="http://fluencyliu.github.io/2017/03/06/Ubuntu%E5%86%85%E6%A0%B8%E4%BF%AE%E5%A4%8D%E4%BB%A5%E5%8F%8Agrub%E7%9A%84%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="室友嫌我帅">
+<meta property="og:description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定&#x3D;。&#x3D;”这句内容的状态也快两年了。 　　使用Linux系统，&#x2F;boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，&#x2F;boot分区的空间就差不多交代了。为了释放&#x2F;boot">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-03-06T02:05:16.000Z">
+<meta property="article:modified_time" content="2020-10-07T17:41:36.817Z">
+<meta property="article:author" content="Liu Chang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu内核修复以及grub的重新配置">
-<meta name="twitter:description" content="第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。
-　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot">
+
+<link rel="canonical" href="http://fluencyliu.github.io/2017/03/06/Ubuntu%E5%86%85%E6%A0%B8%E4%BF%AE%E5%A4%8D%E4%BB%A5%E5%8F%8Agrub%E7%9A%84%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AE/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://fluencyliu.github.io/2017/03/06/Ubuntu内核修复以及grub的重新配置/"/>
-
-
+  <title>Ubuntu内核修复以及grub的重新配置 | 室友嫌我帅</title>
+  
 
 
 
-  <title> Ubuntu内核修复以及grub的重新配置 | FluencyLiu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">FluencyLiu</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">室友嫌我帅</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://fluencyliu.github.io/2017/03/06/Ubuntu内核修复以及grub的重新配置/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://fluencyliu.github.io/2017/03/06/Ubuntu%E5%86%85%E6%A0%B8%E4%BF%AE%E5%A4%8D%E4%BB%A5%E5%8F%8Agrub%E7%9A%84%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liu Chang">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Cruyff.gif">
+      <meta itemprop="name" content="Liu Chang">
+      <meta itemprop="description" content="The importance of being idle.">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FluencyLiu">
+      <meta itemprop="name" content="室友嫌我帅">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Ubuntu内核修复以及grub的重新配置
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu内核修复以及grub的重新配置
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-06T10:05:16+08:00">
-                2017-03-06
-              </time>
-            
+              <span class="post-meta-item-text">发表于</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="创建时间：2017-03-06 10:05:16" itemprop="dateCreated datePublished" datetime="2017-03-06T10:05:16+08:00">2017-03-06</time>
+            </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/06/Ubuntu内核修复以及grub的重新配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/Ubuntu内核修复以及grub的重新配置/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <p>　　第一次用Hexo+Github搭建Blog，还是先写一篇伪技术文测试一下吧。之后我会陆续把自己之前的文章慢慢搬过来，至于什么时候能搬完，那我就不知道了。毕竟我的主页保持只有“主页尚在搭建，完工日期待定=。=”这句内容的状态也快两年了。</p>
 <p>　　使用Linux系统，/boot分区空间不足是一个很常见的问题。一般情况下，新的kernel推送个几次，/boot分区的空间就差不多交代了。为了释放/boot分区的空间，不再使用的kernel通常需要手动删除。清理kernel一直以来都是一项高危工作，稍有不慎就会导致系统奔溃。虽然没有什么问题是重装系统解决不了的，但是考虑到重装系统后需要重新配置系统环境，重装系统的工作量对于在之前系统上耕耘已久的用户显然不是一个小case。下面分享的kernel修复方法是之前折腾了大半天总结出来的，希望可以帮助到其他遇到类似问题的人。</p>
-<p>　　首先要根据所要修复的内核版本在 <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/" target="_blank" rel="external">http://kernel.ubuntu.com/~kernel-ppa/mainline/</a> 找到对应的目录下载所需要的.deb文件。以v4.6-rc6-wily为例，修复64位Ubuntu系统需要下载下列文件：</p>
+<p>　　首先要根据所要修复的内核版本在 <a target="_blank" rel="noopener" href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">http://kernel.ubuntu.com/~kernel-ppa/mainline/</a> 找到对应的目录下载所需要的.deb文件。以v4.6-rc6-wily为例，修复64位Ubuntu系统需要下载下列文件：</p>
 <blockquote>
 <p>linux-headers-4.6.0-040600rc6_4.6.0-040600rc6.201605012031_all.deb<br>linux-headers-4.6.0-040600rc6-generic_4.6.0-040600rc6.201605012031_amd64.deb<br>linux-image-4.6.0-040600rc6-generic_4.6.0-040600rc6.201605012031_amd64.deb</p>
 </blockquote>
-<p>　　使用Live-CD启动，将下载好的.deb文件复制到一个指定目录（e.g. 电脑系统盘root分区下的tmp目录）后，打开Terminal，输入如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mkdir /uroot</div><div class="line">sudo su</div><div class="line">mount /dev/sda2 /uroot #挂载原系统的root目录,以</div><div class="line">mount /dev/sda3 /uroot/boot #挂载boot分区</div><div class="line">mount --bind /proc /uroot/proc #绑定进程文件</div><div class="line">mount --bind /dev /uroot/dev #绑定设备文件</div><div class="line">mount --bind /sys /uroot/sys  #绑定系统文件</div><div class="line">chroot /uroot</div><div class="line">cd /tmp</div><div class="line">dpkg -i *.deb</div></pre></td></tr></table></figure></p>
+<p>　　使用Live-CD启动，将下载好的.deb文件复制到一个指定目录（e.g. 电脑系统盘root分区下的tmp目录）后，打开Terminal，输入如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mkdir /uroot</span><br><span class="line">sudo su</span><br><span class="line">mount /dev/sda2 /uroot #挂载原系统的root目录,以</span><br><span class="line">mount /dev/sda3 /uroot/boot #挂载boot分区</span><br><span class="line">mount --bind /proc /uroot/proc #绑定进程文件</span><br><span class="line">mount --bind /dev /uroot/dev #绑定设备文件</span><br><span class="line">mount --bind /sys /uroot/sys  #绑定系统文件</span><br><span class="line">chroot /uroot</span><br><span class="line">cd /tmp</span><br><span class="line">dpkg -i *.deb</span><br></pre></td></tr></table></figure>
+
 <p>　　安装结束后重启系统即可。</p>
 <p>　　重装Ubuntu之后，grub启动界面会出现一个多余的选项。虽然这并不会影响系统的正常启动，但是对于饱受强迫症煎熬的人来说，它依旧是完全是无法接受的存在。Linux自带的efibootmgr为这个问题提供了方便的解决方案。</p>
 <p>　　首先使用Live-CD启动系统，在Terminal中输入如下命令，查看目前存在的grub选项。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo efibootmgr</div></pre></td></tr></table></figure>
-<p>　　Terminal会输出类似下列的相关信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">BootCurrent: 0001</div><div class="line">Timeout: 1 seconds</div><div class="line">BootOrder: 0001,0000,0006,0004,0005,0002,0003,0007</div><div class="line">Boot0000* Windows Boot Manager</div><div class="line">Boot0001* ubuntu</div><div class="line">Boot0002* UEFI:CD/DVD Drive</div><div class="line">Boot0003* UEFI:Removable Device</div><div class="line">Boot0004* CD/DVD 驱动器 </div><div class="line">Boot0005* 硬盘 </div><div class="line">Boot0006* ubuntu</div><div class="line">Boot0007* UEFI:Network Device</div></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo efibootmgr</span><br></pre></td></tr></table></figure>
+<p>　　Terminal会输出类似下列的相关信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BootCurrent: 0001</span><br><span class="line">Timeout: 1 seconds</span><br><span class="line">BootOrder: 0001,0000,0006,0004,0005,0002,0003,0007</span><br><span class="line">Boot0000* Windows Boot Manager</span><br><span class="line">Boot0001* ubuntu</span><br><span class="line">Boot0002* UEFI:CD/DVD Drive</span><br><span class="line">Boot0003* UEFI:Removable Device</span><br><span class="line">Boot0004* CD/DVD 驱动器 </span><br><span class="line">Boot0005* 硬盘 </span><br><span class="line">Boot0006* ubuntu</span><br><span class="line">Boot0007* UEFI:Network Device</span><br></pre></td></tr></table></figure>
+
 <p>　　可以看到第七个启动项（即Boot0006* ubuntu）是多余的，输入下列命令即可将其删除。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo efibootmgr -b 6 -B</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo efibootmgr -b 6 -B</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
-    <div>
-      
+    
+    
+    
+
+      <footer class="post-footer">
+
         
 
-      
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/09/10/%E6%9F%8F%E6%9E%97%EF%BC%9A%E7%A0%B4%E7%A2%8E%E7%9A%84%E6%97%A5%E8%80%B3%E6%9B%BC%E5%B0%BC%E4%BA%9A%E4%B9%8B%E6%A2%A6/" rel="prev" title="柏林：破碎的日耳曼尼亚之梦">
+      <i class="fa fa-chevron-left"></i> 柏林：破碎的日耳曼尼亚之梦
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/21/%E6%95%99%E6%8E%88%E7%9A%84%E6%8B%89%E9%93%BE%E6%96%97%E4%BA%89%E7%BC%96%E5%B9%B4%E5%8F%B2/" rel="next" title="教授的拉链斗争编年史">
+      教授的拉链斗争编年史 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/09/10/柏林：破碎的日耳曼尼亚之梦/" rel="next" title="柏林：破碎的日耳曼尼亚之梦">
-                <i class="fa fa-chevron-left"></i> 柏林：破碎的日耳曼尼亚之梦
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/21/教授的拉链斗争编年史/" rel="prev" title="教授的拉链斗争编年史">
-                教授的拉链斗争编年史 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+      </footer>
+    
   </article>
+  
+  
+  
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-          
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2017/03/06/Ubuntu内核修复以及grub的重新配置/"
-           data-title="Ubuntu内核修复以及grub的重新配置" data-url="http://fluencyliu.github.io/2017/03/06/Ubuntu内核修复以及grub的重新配置/">
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/Cruyff.gif"
-               alt="Liu Chang" />
-          <p class="site-author-name" itemprop="name">Liu Chang</p>
-           
-              <p class="site-description motion-element" itemprop="description">The importance of being idle.</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="mailto:fluency-liu@qq.com" target="_blank" title="Email">
-                  
-                    <i class="fa fa-fw fa-envelope"></i>
-                  
-                  Email
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/FluencyLiu" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/u/3013744073" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/profile.php?id=100006745637404" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook"></i>
-                  
-                  Facebook
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2017 - 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-circle-o"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Liu Chang</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Liu Chang"
+      src="/images/Cruyff.gif">
+  <p class="site-author-name" itemprop="name">Liu Chang</p>
+  <div class="site-description" itemprop="description">The importance of being idle.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:fluency-liu@qq.com" title="Email → mailto:fluency-liu@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Email</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/FluencyLiu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;FluencyLiu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/u/3013744073" title="Weibo → http:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3013744073" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100006745637404" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100006745637404" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu, Chang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -634,84 +407,6 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"FluencyLiu"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
-
 
 
 
@@ -724,56 +419,6 @@
 
 
   
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
-  
-
 
   
 

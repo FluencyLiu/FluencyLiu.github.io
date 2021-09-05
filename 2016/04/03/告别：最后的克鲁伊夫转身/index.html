@@ -1,634 +1,411 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
+<link rel="stylesheet" href="/css/main.css">
 
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fluencyliu.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Default" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="终于有时间一个人坐下来，安静地写点东西了。没想到第一次在Github上发文居然会是这么沉重的内容。　　我是上周四在机场得知克鲁伊夫去世消息的。在大脑出现短暂的空白之后，关于克圣的记忆就开始像海潮一样缓缓向我涌来，直到把我的思绪完全淹没。我至今都难以相信，几周前还声称自己在与癌症的比赛中取得了2:0领先的克圣，就这样在人生的加时赛里突然离场。　　很遗憾，我错过了克鲁伊夫在球场上驰骋的年代，甚至连">
+  <meta name="description" content="终于有时间一个人坐下来，安静地写点东西了。没想到第一次在Github上发文居然会是这么沉重的内容。　　我是上周四在机场得知克鲁伊夫去世消息的。在大脑出现短暂的空白之后，关于克圣的记忆就开始像海潮一样缓缓向我涌来，直到把我的思绪完全淹没。我至今都难以相信，几周前还声称自己在与癌症的比赛中取得了2:0领先的克圣，就这样在人生的加时赛里突然离场。　　很遗憾，我错过了克鲁伊夫在球场上驰骋的年代，甚至连">
 <meta property="og:type" content="article">
 <meta property="og:title" content="告别：最后的克鲁伊夫转身">
-<meta property="og:url" content="http://fluencyliu.github.io/2016/04/03/告别：最后的克鲁伊夫转身/index.html">
-<meta property="og:site_name" content="FluencyLiu">
+<meta property="og:url" content="http://fluencyliu.github.io/2016/04/03/%E5%91%8A%E5%88%AB%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E5%85%8B%E9%B2%81%E4%BC%8A%E5%A4%AB%E8%BD%AC%E8%BA%AB/index.html">
+<meta property="og:site_name" content="室友嫌我帅">
 <meta property="og:description" content="终于有时间一个人坐下来，安静地写点东西了。没想到第一次在Github上发文居然会是这么沉重的内容。　　我是上周四在机场得知克鲁伊夫去世消息的。在大脑出现短暂的空白之后，关于克圣的记忆就开始像海潮一样缓缓向我涌来，直到把我的思绪完全淹没。我至今都难以相信，几周前还声称自己在与癌症的比赛中取得了2:0领先的克圣，就这样在人生的加时赛里突然离场。　　很遗憾，我错过了克鲁伊夫在球场上驰骋的年代，甚至连">
+<meta property="og:locale">
 <meta property="og:image" content="http://fluencyliu.github.io/img/cruyff/Barcelona0809.jpg">
 <meta property="og:image" content="http://fluencyliu.github.io/img/cruyff/Wenger.jpg">
 <meta property="og:image" content="http://fluencyliu.github.io/img/cruyff/LaMasia.jpg">
 <meta property="og:image" content="http://fluencyliu.github.io/img/cruyff/Cruyff-manager.jpg">
 <meta property="og:image" content="http://fluencyliu.github.io/img/cruyff/Cruyff.png">
 <meta property="og:image" content="http://fluencyliu.github.io/img/cruyff/Venice.jpg">
-<meta property="og:updated_time" content="2017-03-13T01:48:19.650Z">
+<meta property="article:published_time" content="2016-04-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2017-03-13T01:48:19.650Z">
+<meta property="article:author" content="Liu Chang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="告别：最后的克鲁伊夫转身">
-<meta name="twitter:description" content="终于有时间一个人坐下来，安静地写点东西了。没想到第一次在Github上发文居然会是这么沉重的内容。　　我是上周四在机场得知克鲁伊夫去世消息的。在大脑出现短暂的空白之后，关于克圣的记忆就开始像海潮一样缓缓向我涌来，直到把我的思绪完全淹没。我至今都难以相信，几周前还声称自己在与癌症的比赛中取得了2:0领先的克圣，就这样在人生的加时赛里突然离场。　　很遗憾，我错过了克鲁伊夫在球场上驰骋的年代，甚至连">
 <meta name="twitter:image" content="http://fluencyliu.github.io/img/cruyff/Barcelona0809.jpg">
 
+<link rel="canonical" href="http://fluencyliu.github.io/2016/04/03/%E5%91%8A%E5%88%AB%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E5%85%8B%E9%B2%81%E4%BC%8A%E5%A4%AB%E8%BD%AC%E8%BA%AB/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://fluencyliu.github.io/2016/04/03/告别：最后的克鲁伊夫转身/"/>
-
-
+  <title>告别：最后的克鲁伊夫转身 | 室友嫌我帅</title>
+  
 
 
 
-  <title> 告别：最后的克鲁伊夫转身 | FluencyLiu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">FluencyLiu</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">室友嫌我帅</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://fluencyliu.github.io/2016/04/03/告别：最后的克鲁伊夫转身/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://fluencyliu.github.io/2016/04/03/%E5%91%8A%E5%88%AB%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E5%85%8B%E9%B2%81%E4%BC%8A%E5%A4%AB%E8%BD%AC%E8%BA%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liu Chang">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Cruyff.gif">
+      <meta itemprop="name" content="Liu Chang">
+      <meta itemprop="description" content="The importance of being idle.">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FluencyLiu">
+      <meta itemprop="name" content="室友嫌我帅">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                告别：最后的克鲁伊夫转身
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          告别：最后的克鲁伊夫转身
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-03T00:00:00+08:00">
-                2016-04-03
-              </time>
-            
+              <span class="post-meta-item-text">发表于</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="创建时间：2016-04-03 00:00:00" itemprop="dateCreated datePublished" datetime="2016-04-03T00:00:00+08:00">2016-04-03</time>
+            </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/足球/" itemprop="url" rel="index">
-                    <span itemprop="name">足球</span>
-                  </a>
+                  <a href="/categories/%E8%B6%B3%E7%90%83/" itemprop="url" rel="index"><span itemprop="name">足球</span></a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/04/03/告别：最后的克鲁伊夫转身/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/03/告别：最后的克鲁伊夫转身/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <p>　　终于有时间一个人坐下来，安静地写点东西了。没想到第一次在Github上发文居然会是这么沉重的内容。<br>　　我是上周四在机场得知克鲁伊夫去世消息的。在大脑出现短暂的空白之后，关于克圣的记忆就开始像海潮一样缓缓向我涌来，直到把我的思绪完全淹没。我至今都难以相信，几周前还声称自己在与癌症的比赛中取得了2:0领先的克圣，就这样在人生的加时赛里突然离场。<br>　　很遗憾，我错过了克鲁伊夫在球场上驰骋的年代，甚至连他执教下巴萨梦一队的比赛都没有机会亲眼看到。但是这并不妨碍克鲁伊夫成为我最尊敬球员及教练。对于偶像的崇拜往往源于我们对理想自我的渴望。克圣对我来说，就是这样的一个人。堪称国士无双的实力，自信洒脱的气质，坦率直接的行事风格，超越时代的视野，对理想近乎偏执的坚持，甚至还有刁钻犀利的嘴炮。克圣的人生传奇得有点不真实。<br>　　作为新世纪之后才开始看球的年轻球迷，克圣最初于我只是一个年代久远的传说。欧洲历史上最出色的球员，巴萨梦之队的缔造者，略带悲情色彩的无冕之王，这些就是当时我对克圣仅有的认识。<br>　　08年巴萨再次四大皆空，“黑天鹅”里杰卡尔德黯然下课，梦二随之分崩离析。穆里尼奥作为当时世界上最成功的教练之一向巴萨毛遂自荐，希望可以作为主教练带领这支培育了自己的球队重铸辉煌。时任巴萨主席的拉波尔塔也有意邀请穆里尼奥入主诺坎普。就在全世界都认为穆里尼奥执掌巴萨只是时间问题的时候，克鲁伊夫阻止了这个在当时看来水到渠成的签约。他向巴萨推荐了此前只有巴萨B队执教经验的瓜迪奥拉，并且肯定地告诉巴萨球迷，信奉实用主义的穆里尼奥不适合崇尚进攻的巴塞罗那，只有出自拉玛西亚的瓜迪奥拉才能带领球队重回正轨。作为克鲁伊夫的拥趸，拉总最终选择了瓜迪奥拉。几乎全世界的球迷都为巴萨的这一决定感到不解和怀疑，而我也是其中之一。<br>　　08/09赛季西甲的前两轮比赛似乎佐证了球迷的担心，巴萨先是一球负于努曼西亚，之后又客平桑坦德竞技。对克鲁伊夫和巴塞罗那选择的质疑不断见诸报端，但是克鲁伊夫依然镇定自若，并且向媒体表示，那两场比赛中的巴萨，是他近几年看过的最好的巴萨。时至今日，我依然可以回想起自己当时在报纸上看到这则新闻时无奈的苦笑。一周后欧冠小组赛3:1战胜里斯本竞技的比赛改变了一切，巴塞罗那从此一发不可收拾，最终在08/09年拿到了一支俱乐部球队单年度能够拿到的全部六个冠军，取得不可能被超越的成就。而这一切，正是源于克鲁伊夫的独到的眼光以及他基于自信的坚持。那是我第一次折服于克圣的风采。</p>
 <p><img src="/img/cruyff/Barcelona0809.jpg" alt="“08/09赛季巴塞罗那六冠王的伟业正是源于克鲁伊夫的坚持”"> </p>
-<p><center><font size="2">08/09赛季巴塞罗那六冠王的伟业正是源于克鲁伊夫的坚持</font></center></p><p></p>
+<center><font size="2">08/09赛季巴塞罗那六冠王的伟业正是源于克鲁伊夫的坚持</font></center><p/>
+
 <p>　　这个世界从来都不缺少奉行实用主义的成功者，正因为如此，理想主义者才会显得如此卓尔不群。而克圣无疑就是足球世界里最纯粹，同时也最成功的理想主义者。我从来不会掩饰自己对于理想主义者的尊敬。因为我很清楚，自己身上缺乏他们那样的勇气和执着。<br>　　我钦佩温格对阿森纳二十年的坚守。能在推崇身体对抗的英超坚持技术流打法，即便是在06年之后每年只有不足500万净投入的情况下依然始终如一，没有坚定的信念和绝对的自信作为支撑绝无可能。但是我也不得不承认，阿森纳近十年差强人意的成绩确实让不少人对温格的能力产生了怀疑。在诸多的跨界段子中，与四结缘的阿森纳甚至成为了一个数学标记。教授就像是阿金库尔面对英格兰长弓手依旧选择冲锋的法国重甲骑士，即便是注定会为了自己的信仰倒下，也绝不退缩。</p>
 <p><img src="/img/cruyff/Wenger.jpg" alt="“09年温格在与和曼联交手的英超比赛中被罚上看台，面对对手球迷的嘲笑，教授儒雅的风度令人钦佩”"> </p>
-<p><center><font size="2">09年温格在与和曼联交手的英超比赛中被罚上看台，面对对手球迷的嘲笑，教授儒雅的风度令人钦佩</font></center></p><p></p>
+<center><font size="2">09年温格在与和曼联交手的英超比赛中被罚上看台，面对对手球迷的嘲笑，教授儒雅的风度令人钦佩</font></center><p/>
+
 <p>　　同温格一样，克鲁伊夫对于自己的理念也有异乎寻常的坚持。但是克圣的成就和影响显然要远超教授。作为球员，你或许可以举出贝利，马拉多纳，迪斯蒂法诺等超越时代的巨星与克圣争锋；作为教练，你或许可以列出米歇尔斯，萨基，香克利等人同教父相提并论。但是如果你想要找到作为球员和教练都与教父成就相仿的人，你就会发现这个任务已经变得异常困难，要是再算上对足球的深远影响，那克圣就是独一无二的存在。<br>　　早在球员时代，师从米歇尔斯的克鲁伊夫就是攻势足球的拥趸，这一信仰直到克圣离世也未曾改变。对攻势足球和全攻全守的信仰让克圣交了不少学费，但是却始终没有动摇过他的决心。“我宁愿5:4险胜，也不愿1:0蜷取”，这句话中对于进攻的执着，是诸如穆里尼奥那样的奉行厚黑之道的人永远无法理解的。68/69赛季，第一次带领阿贾克斯闯入欧冠决赛的克鲁伊夫最终以1:4的比分惨败给了当时依靠链式防守独步欧洲的AC米兰，但是克鲁伊夫的阿贾克斯随后便实现了欧冠三连冠，弥补了第一次参加决赛惨败而归的遗憾。相比之下，克鲁伊夫的世界杯之旅则让人扼腕。当74年史上最华丽的荷兰队在决赛惜败联邦德国时，谁都想不到这场比赛会成为克鲁伊夫在世界杯舞台上的绝唱。如克鲁伊夫所言，世界杯决赛的失利反而加深了74年荷兰队在球迷心中的印象。那支荷兰队用可能是有史以来最具观赏性的打法让人们永远记住了这支无冕之师。作为教练的克鲁伊夫同样遭遇过令人绝望的打击，但即便是在94年欧冠决赛令人震惊地以0:4输给卡佩罗的AC米兰，克圣对于自己理念的信心也没有被击溃。正是得益于这份自信和坚持，克圣的足球哲学才得以在巴萨得到传承，直到今天依旧是球队强大进攻体系的基础。<br>　　克圣曾两次以救世主的姿态入主诺坎普，一次是球员时代从阿贾克斯转会巴塞罗那，另一次则是在巴萨滑向深渊之时出任球队主帅。尽管和时任巴萨主席努涅斯矛盾重重，但是作为球队主教练的克鲁伊夫还是用他颠覆性的战术体系为巴萨开创了一段史无前例的辉煌时期。与一般的主教练不同，克圣并不满足于带队争夺冠军。对克鲁伊夫而言，仅仅拿到冠军是不够的，他的目标是以自己理想中的方式收获冠军。因此克圣在巴萨并没有把视线局限在一线队身上。他按照自己的构想改造了巴萨的青训系统，拉玛西亚从此步入正轨。在那之后，拉玛西亚开始源源不断地涌现天才的毕业生，其中不但有瓜迪奥拉，哈维，普约尔，伊涅斯塔，梅西等日后巴萨不同时期的基石，也有法布雷加斯，雷纳，蒂亚戈这样的一流球员，“足坛西点”因此得名。时至今日，巴塞罗那依然秉承着克鲁伊夫的足球理念。从某种意义上来说，巴塞罗那在1988年迎来克鲁伊夫的那一刻得到了重塑，克圣“巴萨教父”之称名副其实。</p>
 <p><img src="/img/cruyff/LaMasia.jpg" alt="“拉玛西亚门前的长者塑像见证了一批又一批青年才俊的成长”"> </p>
-<p><center><font size="2">拉玛西亚门前的长者塑像见证了一批又一批青年才俊的成长</font></center></p><p></p>
+<center><font size="2">拉玛西亚门前的长者塑像见证了一批又一批青年才俊的成长</font></center><p/>
+
 <p>　　克鲁伊夫对自己的判断有着绝对的自信，而且从不在事关自己理念和原则的问题上妥协。克圣经常与巴萨和阿贾克斯的一些高层意见向左，他的孤傲和坚持使得他与诸多高层关系不睦。然而事实证明，克圣的观点和选择往往才是正确的。在成为巴萨主帅的第一天，克鲁伊夫就警告控制欲极强的球队主席努涅斯，不要对自己的球队指手画脚，二人的矛盾从合作的开始就埋下了伏笔。好在这些矛盾并没有阻止克圣在欧洲足坛开创属于巴萨梦之队的时代。之后固执的努涅斯和无能的加斯帕特逼走了教父，随之而来的就是俱乐部世纪之交的黑暗时期。直到拉波尔塔上台，请回克鲁伊夫做球队的顾问，球队才再次回到正轨，迎来了梦二和梦三时代的辉煌。奠定辉煌基础的两次的选帅，在当时看起来似乎都显得有些不可理喻，但还是因为克圣的坚持和拉总的信任得以实现。让人无法不为克圣的眼光和魄力所折服。之后接替拉总的罗塞尔为了一己私利排挤克圣，孤立瓜帅，直接导致了梦三解体，使巴萨陷入近年来最混乱的一段时期。而他本人也在之后因为经济丑闻被迫辞去主席一职，甚至还可能面临牢狱之灾。罗扣扣混到今天这个地步，只能说是自作自受。克圣的母队阿贾克斯同样也曾因为拒绝接受克圣的忠告而陷入困境。克圣曾经因为阿贾克斯在没有通知自己的情况下就决定聘请范加尔出任球队主管而愤然辞职，阿贾克斯随后便陷入混乱，不但联赛冠军旁落，甚至还连年缺席欧冠。直到俱乐部在克圣的授意下起用德波尔出任主帅，掀起“天鹅绒革命”，阿贾克斯才重夺联赛冠军。相比温格，克圣更像是第二次布匿战争中的汉尼拔，拖着一群猪一样的元老院，强行在亚平宁纵横十余载。</p>
 <p><img src="/img/cruyff/Cruyff-manager.jpg" alt="“作为主教练重塑巴萨的克鲁伊夫时至今日依旧被认为是巴萨历史上最伟大的教练”"> </p>
-<p><center><font size="2">作为主教练重塑巴萨的克鲁伊夫时至今日依旧被认为是巴萨历史上最伟大的教练</font></center></p><p></p>
+<center><font size="2">作为主教练重塑巴萨的克鲁伊夫时至今日依旧被认为是巴萨历史上最伟大的教练</font></center><p/>
+
 <p>　　克圣的理想主义不仅仅是对球队战术的坚持，更是对足球这项运动本质的坚持。即便是在传统球队备受金元攻势冲击的今天，克圣依然对那些依靠着挥舞的支票簿堆积球星而突然崛起的“土豪”球队嗤之以鼻。“凭什么你干不翻一支土豪俱乐部？我从没见过一口袋钞票还能进球得分。”正是出自克圣之口。克圣对金元足球的不屑可见一斑。教父生前一直排斥将足球与商业元素过多地捆绑在一起，他极力反对将巴萨球衣的胸前广告和球场冠名权商业化。07年之前，巴萨是顶级联赛唯一没有胸前广告赞助商的球队。07年开始，球队的胸前不再是一片空白，但是出现在球衣上的unicef标志并不是来自商业赞助，巴塞罗那俱乐部不但没有从胸前广告获益，还要拿出俱乐部年收入的0.7%捐给联合国发展千禧年发展目标计划。遗憾的是，俱乐部一百一十多年的传统最终还是被罗扣扣打破，12年巴萨与卡塔尔基金会签订了胸前广告赞助协议，原来的unicef标志被移到球衣背面，球衣胸前的位置被现在的Qatar airway所占据。正是从那时起，除了在巴塞罗那亚太官方商城刚刚成立时购买的一件14/15赛季主场球衣，我再没买过一件巴萨的球衣。或许克圣的逆势而为无法阻止足球商业化的浪潮，但他从来都没有放弃过这份无奈的坚持。真是因为那些同克鲁伊夫一样坚持的人存在，足球才没有迷失在商业化和功利化的漩涡中。<br>　　克鲁伊夫孤傲洒脱的性格和极度敏感的自尊心同样不可多得。球员时代两次负气离开阿贾克斯都是因为克圣感觉自己受到了球队的轻视。第二次出走转会费耶诺德，并成功帮助这支阿贾克斯的死敌压制阿贾克斯夺冠的事迹，直到今天依旧是足球世界最具讽刺（打脸）意味的转会。值得一提的是，克鲁伊夫同样没有放弃报复当时赶走自己的巴萨主席努涅斯，03年他支持非努涅斯派系的拉波尔塔成功当选巴萨主席，让俱乐部彻底摆脱了努涅斯的影响，完成了对自己宿敌的完美反击。此外，克圣和范加尔，穆里尼奥之间的嘴炮同样是不少球迷津津乐道的话题。率性如此，克圣的人格魅力着实让人难以抗拒。</p>
 <p><img src="/img/cruyff/Cruyff.png" alt="“孤傲的性格和卓越的领袖气质在球员时代就是克鲁伊夫的标志”"> </p>
-<p><center><font size="2">孤傲的性格和卓越的领袖气质在球员时代就是克鲁伊夫的标志</font></center></p><p></p>
+<center><font size="2">孤傲的性格和卓越的领袖气质在球员时代就是克鲁伊夫的标志</font></center><p/>
+
 <p>　　刚刚结束的国家德比是克圣离世之后巴塞罗那的第一场比赛，巴萨上下本想用一场胜利为克圣送别，没想到结果却是被对手两球逆转。或许缺憾本身就是克圣人生的一种标识吧。遗憾的世界杯决赛，遗憾的退役告别赛，遗憾的执教生涯，还有今天遗憾的国家德比。可是克鲁伊夫从来就不是一个追求完美的人，他关心的只是自己的理念和足球理想能否得到认可与实现。即便是有再多遗憾，只要能把美丽足球展现给观众，克圣就会感到满足；只要巴萨能将克圣的战术思想传承下去，克圣就足以感到欣慰。希望赛季结束之时，巴萨能成为欧冠改制之后首支成功卫冕的冠军，用克鲁伊夫体系的成功真正地为克圣送别。</p>
 <p><img src="/img/cruyff/Venice.jpg" alt="“上周复活节假期，在威尼斯偶遇一家球衣店腾出一个橱窗纪念克圣，理想主义者终究会被人们铭记和怀念”"> </p>
-<p><center><font size="2">上周复活节假期，在威尼斯偶遇一家球衣店腾出一个橱窗纪念克圣，理想主义者终究会被人们铭记和怀念</font></center></p><p></p>
-
-      
+<center><font size="2">上周复活节假期，在威尼斯偶遇一家球衣店腾出一个橱窗纪念克圣，理想主义者终究会被人们铭记和怀念</font></center><p/>
     </div>
 
-    <div>
-      
+    
+    
+    
+
+      <footer class="post-footer">
+
         
 
-      
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2016/04/12/%E5%B7%B4%E5%A1%9E%E7%BD%97%E9%82%A3%EF%BC%9A%E7%9B%AE%E6%A0%87%E8%AF%BA%E5%9D%8E%E6%99%AE%E7%9A%84%E6%9C%9D%E5%9C%A3%E4%B9%8B%E6%97%85/" rel="next" title="巴塞罗那：目标诺坎普的朝圣之旅">
+      巴塞罗那：目标诺坎普的朝圣之旅 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/12/巴塞罗那：目标诺坎普的朝圣之旅/" rel="prev" title="巴塞罗那：目标诺坎普的朝圣之旅">
-                巴塞罗那：目标诺坎普的朝圣之旅 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+      </footer>
+    
   </article>
+  
+  
+  
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-          
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/04/03/告别：最后的克鲁伊夫转身/"
-           data-title="告别：最后的克鲁伊夫转身" data-url="http://fluencyliu.github.io/2016/04/03/告别：最后的克鲁伊夫转身/">
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/Cruyff.gif"
-               alt="Liu Chang" />
-          <p class="site-author-name" itemprop="name">Liu Chang</p>
-           
-              <p class="site-description motion-element" itemprop="description">The importance of being idle.</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="mailto:fluency-liu@qq.com" target="_blank" title="Email">
-                  
-                    <i class="fa fa-fw fa-envelope"></i>
-                  
-                  Email
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/FluencyLiu" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/u/3013744073" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/profile.php?id=100006745637404" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook"></i>
-                  
-                  Facebook
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2017 - 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-circle-o"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Liu Chang</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Liu Chang"
+      src="/images/Cruyff.gif">
+  <p class="site-author-name" itemprop="name">Liu Chang</p>
+  <div class="site-description" itemprop="description">The importance of being idle.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:fluency-liu@qq.com" title="Email → mailto:fluency-liu@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Email</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/FluencyLiu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;FluencyLiu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/u/3013744073" title="Weibo → http:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3013744073" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100006745637404" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100006745637404" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu, Chang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -638,84 +415,6 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"FluencyLiu"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
-
 
 
 
@@ -728,56 +427,6 @@
 
 
   
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
-  
-
 
   
 
